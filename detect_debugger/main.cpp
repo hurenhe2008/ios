@@ -19,8 +19,7 @@ static bool is_debugger_present()
 	info.kp_proc.p_flag = 0;
 	
 	if (sysctl(name, 4, &info, &kinfo_size, NULL, 0)) {
-		printf("call sysctl error:%d string:%s\n", 
-				errno, strerror(errno));
+		printf("call sysctl error:%d\n", errno);
 		abort();
 	}
 
@@ -36,7 +35,7 @@ int main(int argc, const char *argv[])
 		if (is_debugger_present()) {
 			printf("found a debugger attached, ready to exit!!!\n");
 			
-			getchar();  exit(0):
+			getchar();  exit(0);
 		}
 
 		sleep(1);  /*avoid cpu full used*/
