@@ -1,5 +1,5 @@
 INCLUDE=-I.
-LIBS=-lpthread
+LIBS=
 OBJS=main.o
 
 CFLAGS=-Wall 
